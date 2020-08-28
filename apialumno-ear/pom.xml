@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.marandu</groupId>
+        <artifactId>apialumno</artifactId>
+       <version>1.0.0</version>
+    </parent>
+    <artifactId>apialumno-ear</artifactId>
+    <packaging>ear</packaging>
+    <version>1.0.0</version>
+    <name>apialumno-ear</name>
+    
+    <dependencies>
+        <dependency>
+            <groupId>com.marandu</groupId>
+            <artifactId>apialumno-business</artifactId>
+            <version>${project.version}</version>
+            <type>ejb</type>
+        </dependency>
+        <dependency>
+            <groupId>com.marandu</groupId>
+            <artifactId>apialumno-persistence</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.marandu</groupId>
+            <artifactId>apialumno-web</artifactId>
+            <version>${project.version}</version>
+            <type>war</type>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.cicha.enterprise</groupId>
+            <artifactId>e-core</artifactId>
+            <type>ejb</type>
+        </dependency>
+        <dependency>
+            <groupId>com.cicha.enterprise</groupId>
+            <artifactId>e-base</artifactId>
+            <type>ejb</type>
+        </dependency>
+    </dependencies>
+    
+    <build>
+        <finalName>${project.artifactId}</finalName>        
+        <plugins> 
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ear-plugin</artifactId>
+                <version>2.10.1</version>
+                <configuration>
+                    <version>6</version>
+                    <defaultLibBundleDir>lib</defaultLibBundleDir>
+                    <escapeString>/</escapeString>
+                    <filtering>true</filtering>
+                    <filters>
+                        <filter>src/main/application/version.properties</filter>
+                    </filters>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <distributionManagement>
+        <repository>
+            <id>central</id>
+            <name>Marandu-releases</name>
+            <url>http://artifactory.marandu.com.ar/artifactory/apps-release/</url>
+        </repository>
+    </distributionManagement>
+</project>

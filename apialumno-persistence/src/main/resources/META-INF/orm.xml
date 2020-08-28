@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings version="2.1"
+                 xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm orm_2_1.xsd">
+    <!--
+    Ejemplo sacado de:
+    https://docs.jboss.org/hibernate/orm/4.0/hem/en-US/html/listeners.html
+    -->
+    <persistence-unit-metadata>
+        <persistence-unit-defaults>
+            <entity-listeners>
+                <entity-listener class="com.cicha.core.idmanager.IdListener">
+                    <pre-persist method-name="onPrePersist"/>
+                    <post-persist method-name="onPostPersist"/>
+                    <post-remove method-name="onPostRemove"/>
+                </entity-listener> 
+            </entity-listeners>
+        </persistence-unit-defaults>
+    </persistence-unit-metadata>
+    <!--Other listeners-->
+
+</entity-mappings>

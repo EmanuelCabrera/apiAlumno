@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="base_persistence_unit" transaction-type="JTA">
+    <jta-data-source>apialumno</jta-data-source>
+    <!--Converters-->
+    <class>com.cicha.core.converters.SetIntConverter</class>
+    <class>com.cicha.core.converters.ListIntConverter</class>
+    <class>com.cicha.core.converters.ListLongConverter</class>
+    <class>com.cicha.core.converters.ListStrLineConverter</class>
+    <class>com.cicha.core.converters.ListStrComaConverter</class>
+    <class>com.cicha.core.converters.SetLongConverter</class>
+    <class>com.cicha.core.converters.SetStrComaConverter</class>
+    <class>com.cicha.core.converters.MapStrJsonConverter</class>
+    <class>com.cicha.core.converters.CipherConverters</class>
+    <class>com.cicha.base.direccion.extras.MapPolygonStrComaConverter</class>
+    <!--entidades Core-->
+    <class>com.cicha.core.log.RequestLog</class>
+    <class>com.cicha.core.idmanager.ClassId</class>
+    <class>com.cicha.core.FileContent</class>
+    <class>com.cicha.core.log.ErrorJavaLog</class>
+    <class>com.cicha.core.Task</class>
+    <class>com.cicha.core.session.SessionLog</class>
+    <!--Timers-->
+    <class>com.marandu.timers.entities.ScheduleEntity</class>
+    <!--Base-->
+    <class>com.cicha.base.direccion.entities.Departamento</class>
+    <class>com.cicha.base.direccion.entities.Direccion</class>
+    <class>com.cicha.base.direccion.entities.Localidad</class>
+    <class>com.cicha.base.direccion.entities.Pais</class>
+    <class>com.cicha.base.direccion.entities.Provincia</class>
+    <class>com.cicha.base.rrhh.entities.Contacto</class>
+    <class>com.cicha.base.rrhh.entities.Persona</class>
+    <class>com.cicha.base.security.entities.Permission</class>
+    <class>com.cicha.base.security.entities.User</class>
+    <class>com.cicha.base.security.entities.Rol</class>
+    <class>com.cicha.base.security.entities.UserGroup</class>
+    <class>com.cicha.base.security.entities.VerifyEntity</class>
+    <class>com.cicha.base.contenido.entities.Contenido</class>
+    <class>com.cicha.base.contenido.entities.ContenidoList</class>
+    <class>com.cicha.base.logs.entities.ErrorNotificationAccount</class>
+    <class>com.cicha.base.logs.entities.ErrorNotificationCase</class>
+    <class>com.cicha.base.logs.entities.ActionLog</class>
+    <class>com.cicha.base.contenido.entities.EspacioUsado</class>
+    <class>com.cicha.base.contenido.entities.ContenidoTest</class>
+    <class>com.cicha.base.test.entities.Test</class>
+    <class>com.cicha.base.comment.entities.CommentPlain</class>
+    <class>com.cicha.base.calendario.entities.Calendario</class>
+    <class>com.cicha.base.calendario.entities.CalendarioEvento</class>
+    <!--<Ahora>-->
+    <class>com.marandu.apialumno.entities.Example</class>
+    <properties>
+      <property name="javax.persistence.schema-generation.database.action" value="create"/>
+      <property name="javax.persistence.schema-generation.create-source" value="script-then-metadata"/>
+      <property name="javax.persistence.schema-generation.create-script-source" value="META-INF/create-script.sql"/>
+      <!--<property name="eclipselink.logging.level" value="FINE"/>-->
+    </properties>
+  </persistence-unit>
+</persistence>
