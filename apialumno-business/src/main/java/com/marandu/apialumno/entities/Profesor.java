@@ -4,11 +4,7 @@ import com.cicha.base.rrhh.entities.Contacto;
 import com.cicha.core.AuditableEntity;
 import com.cicha.core.EntityInfo;
 import com.cicha.core.Gender;
-import java.util.List;
 import javax.persistence.Entity;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 /**
@@ -16,20 +12,16 @@ import javax.persistence.OneToOne;
  * @author Emanuel Cabrera
  */
 @Entity
-@EntityInfo(gender = Gender.MALE, name = "alumno", namePlural = "alumnos")
-public class Alumno extends AuditableEntity {
+@EntityInfo(gender = Gender.MALE, name = "profesor", namePlural = "profesores")
+public class Profesor extends AuditableEntity {
 
     private String nombre;
     private String apellido;
-    private String matricula;
+
     @OneToOne
     private Contacto contacto;
-    
-    @OneToMany
-    @JoinTable(name = "alumno_materiascursadas")
-    private List<MateriaCursada> materiasCursadas;
 
-    public Alumno() {
+    public Profesor() {
     }
 
     public String getNombre() {
@@ -48,28 +40,12 @@ public class Alumno extends AuditableEntity {
         this.apellido = apellido;
     }
 
-    public String getMatricula() {
-        return matricula;
-    }
-
-    public void setMatricula(String matricula) {
-        this.matricula = matricula;
-    }
-
     public Contacto getContacto() {
         return contacto;
     }
 
     public void setContacto(Contacto contacto) {
         this.contacto = contacto;
-    }
-
-    public List<MateriaCursada> getMateriasCursadas() {
-        return materiasCursadas;
-    }
-
-    public void setMateriasCursadas(List<MateriaCursada> materiasCursadas) {
-        this.materiasCursadas = materiasCursadas;
     }
 
     @Override

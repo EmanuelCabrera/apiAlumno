@@ -1,75 +1,79 @@
 package com.marandu.apialumno.entities;
 
-import com.cicha.base.contenido.entities.ContenidoList;
 import com.cicha.core.AuditableEntity;
 import com.cicha.core.EntityInfo;
 import com.cicha.core.Gender;
-import javax.persistence.Column;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
-import org.apache.commons.lang3.StringUtils;
+import javax.persistence.Temporal;
 
 /**
  *
  * @author Emanuel Cabrera
  */
 @Entity
-@EntityInfo(gender = Gender.MALE, name = "example", namePlural = "examples")
+@EntityInfo(gender = Gender.MALE, name = "materia cursada", namePlural = "Materias Cursadas")
 public class MateriaCursada extends AuditableEntity {
 
-    @Column(length = 5000)
-    private String body;
-
-    private boolean clientView;
-
-    private boolean sistema;
+    private boolean aprobada;
+    private boolean vencida;
+    
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date fechaCursado;
 
     @OneToOne
-    private ContenidoList atachments;
+    private Alumno alumno;
 
-
+    @OneToOne
+    private Materia materia;
 
     public MateriaCursada() {
     }
 
-    public String getBody() {
-        return body;
+    public boolean isAprobada() {
+        return aprobada;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setAprobada(boolean aprobada) {
+        this.aprobada = aprobada;
     }
 
-    public boolean isClientView() {
-        return clientView;
+    public boolean isVencida() {
+        return vencida;
     }
 
-    public void setClientView(boolean clientView) {
-        this.clientView = clientView;
+    public void setVencida(boolean vencida) {
+        this.vencida = vencida;
     }
 
-    public ContenidoList getAtachments() {
-        return atachments;
+    public Alumno getAlumno() {
+        return alumno;
     }
 
-    public void setAtachments(ContenidoList atachments) {
-        this.atachments = atachments;
+    public void setAlumno(Alumno alumno) {
+        this.alumno = alumno;
     }
 
-
-    public boolean isSistema() {
-        return sistema;
+    public Materia getMateria() {
+        return materia;
     }
 
-    public void setSistema(boolean sistema) {
-        this.sistema = sistema;
+    public void setMateria(Materia materia) {
+        this.materia = materia;
     }
 
-    
+    public Date getFechaCursado() {
+        return fechaCursado;
+    }
+
+    public void setFechaCursado(Date fechaCursado) {
+        this.fechaCursado = fechaCursado;
+    }
 
     @Override
     public String myName() {
-        return StringUtils.abbreviate(body, 10);
+        return this.materia.getNombre();
     }
 
 }

@@ -47,7 +47,12 @@
     <class>com.cicha.base.calendario.entities.Calendario</class>
     <class>com.cicha.base.calendario.entities.CalendarioEvento</class>
     <!--<Ahora>-->
-    <class>com.marandu.apialumno.entities.Example</class>
+    <class>com.marandu.apialumno.entities.Alumno</class>
+    <class>com.marandu.apialumno.entities.Profesor</class>
+    <class>com.marandu.apialumno.entities.Materia</class>
+    <class>com.marandu.apialumno.entities.MateriaCursada</class>
+    <class>com.marandu.apialumno.entities.MesaExamen</class>
+    <class>com.marandu.apialumno.entities.Inscripcion</class>
     <properties>
       <property name="javax.persistence.schema-generation.database.action" value="create"/>
       <property name="javax.persistence.schema-generation.create-source" value="script-then-metadata"/>
