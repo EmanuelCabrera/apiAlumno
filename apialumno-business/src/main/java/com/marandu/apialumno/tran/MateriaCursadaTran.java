@@ -1,18 +1,17 @@
 package com.marandu.apialumno.tran;
 
-import com.cicha.base.contenido.tran.GenericContenidoTran;
+import com.cicha.core.GenericTran;
 import com.cicha.core.extras.Op;
 import com.marandu.apialumno.entities.Alumno;
 import com.marandu.apialumno.entities.Materia;
 import com.marandu.apialumno.entities.MateriaCursada;
-import com.marandu.apialumno.entities.MesaExamen;
 import java.util.Date;
 
 /**
  *
  * @author Emanuel Cabrera
  */
-public class MateriaCursadaTran extends GenericContenidoTran<MateriaCursada> {
+public class MateriaCursadaTran extends GenericTran<MateriaCursada> {
 
     // Atributos
     private boolean aprobada;

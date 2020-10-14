@@ -1,6 +1,6 @@
 package com.marandu.apialumno.tran;
 
-import com.cicha.base.contenido.tran.GenericContenidoTran;
+import com.cicha.core.GenericTran;
 import com.cicha.core.extras.Op;
 import com.marandu.apialumno.entities.Materia;
 import com.marandu.apialumno.entities.Profesor;
@@ -9,7 +9,7 @@ import com.marandu.apialumno.entities.Profesor;
  *
  * @author Emanuel Cabrera
  */
-public class MateriaTran extends GenericContenidoTran<Materia> {
+public class MateriaTran extends GenericTran<Materia> {
 
     // Atributos
     private String nombre;

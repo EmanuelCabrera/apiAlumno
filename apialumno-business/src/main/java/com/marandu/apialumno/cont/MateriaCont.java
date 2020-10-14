@@ -67,7 +67,7 @@ public class MateriaCont extends GenericContTran<Materia, MateriaTran> {
         if (Op.UPDATE.equals(op)) {
             tran.setMe(findEx(tran.getId()));
         }
-        tran.setProfesor(profesorCont.findEx(tran.getProfesorId()));
+        tran.setProfesor(profesorCont.find(tran.getProfesorId()));
     }
 
     public void validate(Op op, MateriaTran tran) throws Exception {

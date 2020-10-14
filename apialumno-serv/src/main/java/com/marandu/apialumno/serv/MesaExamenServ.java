@@ -25,7 +25,7 @@ import javax.ws.rs.Produces;
  * @author Emanuel Cabrera
  */
 @RequestScoped
-@Path("mesa_examen")
+@Path("mesa-examen")
 public class MesaExamenServ extends GenericServ<MesaExamenCont> {
 
     @GET

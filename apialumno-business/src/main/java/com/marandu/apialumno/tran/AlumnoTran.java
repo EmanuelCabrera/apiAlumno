@@ -1,10 +1,9 @@
 package com.marandu.apialumno.tran;
 
-import com.cicha.base.contenido.tran.GenericContenidoTran;
 import com.cicha.base.rrhh.tran.ContactoTran;
+import com.cicha.core.GenericTran;
 import com.cicha.core.extras.Op;
 import com.marandu.apialumno.entities.Alumno;
-import com.marandu.apialumno.entities.Example;
 import com.marandu.apialumno.entities.MateriaCursada;
 import java.util.List;
 
@@ -12,7 +11,7 @@ import java.util.List;
  *
  * @author Emanuel Cabrera
  */
-public class AlumnoTran extends GenericContenidoTran<Alumno> {
+public class AlumnoTran extends GenericTran<Alumno> {
 
     // Atributos
     private String nombre;

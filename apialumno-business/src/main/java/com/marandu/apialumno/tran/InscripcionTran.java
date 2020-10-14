@@ -1,6 +1,7 @@
 package com.marandu.apialumno.tran;
 
 import com.cicha.base.contenido.tran.GenericContenidoTran;
+import com.cicha.core.GenericTran;
 import com.cicha.core.extras.Op;
 import com.marandu.apialumno.entities.Alumno;
 import com.marandu.apialumno.entities.Inscripcion;
@@ -11,7 +12,7 @@ import java.util.Date;
  *
  * @author Emanuel Cabrera
  */
-public class InscripcionTran extends GenericContenidoTran<Inscripcion> {
+public class InscripcionTran extends GenericTran<Inscripcion> {
 
     // Atributos
     private String codigo;

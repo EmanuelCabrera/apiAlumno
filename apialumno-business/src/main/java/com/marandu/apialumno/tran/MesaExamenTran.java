@@ -1,9 +1,7 @@
 package com.marandu.apialumno.tran;
 
-import com.cicha.base.contenido.tran.GenericContenidoTran;
-import com.cicha.base.rrhh.tran.ContactoTran;
+import com.cicha.core.GenericTran;
 import com.cicha.core.extras.Op;
-import com.marandu.apialumno.entities.Example;
 import com.marandu.apialumno.entities.MesaExamen;
 import com.marandu.apialumno.entities.Profesor;
 import java.util.Date;
@@ -13,7 +11,7 @@ import java.util.Date;
  *
  * @author Emanuel Cabrera
  */
-public class MesaExamenTran extends GenericContenidoTran<MesaExamen> {
+public class MesaExamenTran extends GenericTran<MesaExamen> {
 
     // Atributos
     private Date fecha;

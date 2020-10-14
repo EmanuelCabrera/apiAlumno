@@ -26,7 +26,7 @@ import javax.ws.rs.Produces;
  * @author Emanuel Cabrera
  */
 @RequestScoped
-@Path("materia_cursada")
+@Path("materia-cursada")
 public class MateriaCursadaServ extends GenericServ<MateriaCursadaCont> {
 
     @GET
