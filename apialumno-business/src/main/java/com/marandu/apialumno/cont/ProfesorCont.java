@@ -32,13 +32,15 @@ import javax.ejb.EJB;
 public class ProfesorCont extends GenericContTran<Profesor, ProfesorTran> {
 
     @EJB
-    ContactoCont contactoCont ;
+    ContactoCont contactoCont;
 
     @Override
     @MethodName(name = MethodsNameApiAlumno.PROFESOR_ADD)
     public Profesor create(ProfesorTran tran) throws Exception {
         assign(Op.CREATE, tran);
         validate(Op.CREATE, tran);
+        contactoCont.save(tran.getContacto(), tran.getMe(), "contacto", RemoveType.FISICO, ReferencedChangeType.CHANGE_AND_NOTREMOVE, ReferencedNullableType.NULL);
+
         Profesor profesor = tran.build(Op.CREATE);
         em.persist(profesor);
         return profesor;
@@ -49,6 +51,7 @@ public class ProfesorCont extends GenericContTran<Profesor, ProfesorTran> {
     public Profesor update(ProfesorTran tran) throws Exception {
         assign(Op.UPDATE, tran);
         validate(Op.UPDATE, tran);
+        contactoCont.save(tran.getContacto(), tran.getMe(), "contacto", RemoveType.FISICO, ReferencedChangeType.CHANGE_AND_NOTREMOVE, ReferencedNullableType.NULL);
         Profesor profesor = tran.build(Op.UPDATE);
         em.merge(profesor);
         return profesor;

@@ -2,10 +2,10 @@ package com.marandu.apialumno.tran;
 
 import com.cicha.core.GenericTran;
 import com.cicha.core.extras.Op;
+import com.marandu.apialumno.entities.Materia;
 import com.marandu.apialumno.entities.MesaExamen;
 import com.marandu.apialumno.entities.Profesor;
 import java.util.Date;
-
 
 /**
  *
@@ -16,13 +16,14 @@ public class MesaExamenTran extends GenericTran<MesaExamen> {
     // Atributos
     private Date fecha;
 
+    private Long materiaId;
     private Long presidenteId;
 
     private Long primerVocalId;
 
+    private Materia materia;
     private Profesor presidente;
     private Profesor primerVocal;
-    
 
     public MesaExamenTran() {
     }
@@ -32,6 +33,7 @@ public class MesaExamenTran extends GenericTran<MesaExamen> {
         res.setFecha(fecha);
         res.setPresidente(presidente);
         res.setPrimerVocal(primerVocal);
+        res.setMateria(materia);
         return res;
     }
 
@@ -75,6 +77,20 @@ public class MesaExamenTran extends GenericTran<MesaExamen> {
         this.primerVocal = primerVocal;
     }
 
-  
+    public Long getMateriaId() {
+        return materiaId;
+    }
+
+    public void setMateriaId(Long materiaId) {
+        this.materiaId = materiaId;
+    }
+
+    public Materia getMateria() {
+        return materia;
+    }
+
+    public void setMateria(Materia materia) {
+        this.materia = materia;
+    }
 
 }

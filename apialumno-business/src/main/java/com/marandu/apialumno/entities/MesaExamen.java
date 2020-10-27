@@ -20,6 +20,9 @@ public class MesaExamen extends AuditableEntity {
     private Date fecha;
 
     @OneToOne
+    private Materia materia;
+
+    @OneToOne
     private Profesor presidente;
 
     @OneToOne
@@ -50,6 +53,14 @@ public class MesaExamen extends AuditableEntity {
 
     public void setPrimerVocal(Profesor primerVocal) {
         this.primerVocal = primerVocal;
+    }
+
+    public Materia getMateria() {
+        return materia;
+    }
+
+    public void setMateria(Materia materia) {
+        this.materia = materia;
     }
 
     @Override
